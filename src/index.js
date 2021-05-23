@@ -1,4 +1,8 @@
 import './sass/main.scss';
+import menuCardTpl from './templates/menu-card.hbs';
+import menu from './menu.json';
+
+
 
 const Theme = {
   LIGHT: 'light-theme',
@@ -7,6 +11,10 @@ const Theme = {
 
 const switchToggle = document.querySelector('#theme-switch-toggle');
 const bodyEl = document.querySelector('body');
+const menuListEl = document.querySelector('.js-menu');
+
+const menuMarkup = menuCardTpl(menu);
+menuListEl.insertAdjacentHTML('beforeend', menuMarkup);
 
 
 function populateToggle() {
